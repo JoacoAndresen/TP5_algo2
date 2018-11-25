@@ -1,13 +1,10 @@
-#include "funciones.h"
+#include<iostream>
+#include "abb.cpp"
 
 int main(){
-    
-    std::ifstream archivo;
-    archivo.open("/Users/joaquinandresen/Desktop/Algoritmos y Programación II/TP5/TP5/aeropuertos.txt");
-    
-    //mostrarDatos(archivo);
-    opcion2();
-    archivo.close();
-    
+    ArbolBinario a1, a2, a3, a4, a;
+    Nodo *n1, *n2, *n3, *n4;
+
+    n1 = a1.nuevoArbol(NULL, "Maria", NULL);
     return 0;
 }
