@@ -1,6 +1,7 @@
 #ifndef aeropuerto_h
 #define aeropuerto_h
 #include <string>
+#include <iostream>
 
 class Aeropuerto{
 private:
@@ -27,6 +28,17 @@ public:
     int mostrarTerminales();
     int mostrarNacionales();
     int mostrarInternacionales();
+    
+    void modificarCodigo(std::string cod);
+    void modificarNombre(std::string nom);
+    void modificarCiudad(std::string ciu);
+    void modificarPais(std::string pai);
+    void modificarSuperficie(float sup);
+    void modificarTerminales(int ter);
+    void modificarNacionales(int dnac);
+    void modificarInternacionales(int dint);
+    
+    void mostrarDatos();
 };
 
 #endif /* aeropuerto_h */

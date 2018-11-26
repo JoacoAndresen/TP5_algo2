@@ -53,3 +53,46 @@ int Aeropuerto::mostrarNacionales(){
 int Aeropuerto::mostrarInternacionales(){
     return d_int;
 }
+
+void Aeropuerto::modificarCodigo(std::string cod){
+    codigo = cod;
+}
+
+void Aeropuerto::modificarNombre(std::string nom){
+    nombre = nom;
+}
+
+void Aeropuerto::modificarCiudad(std::string ciu){
+    ciudad = ciu;
+}
+
+void Aeropuerto::modificarPais(std::string pai){
+    pais = pai;
+}
+
+void Aeropuerto::modificarSuperficie(float sup){
+    superficie = sup;
+}
+
+void Aeropuerto::modificarTerminales(int ter){
+    terminales = ter;
+}
+
+void Aeropuerto::modificarNacionales(int dnac){
+    d_nac = dnac;
+}
+
+void Aeropuerto::modificarInternacionales(int dint){
+    d_int = dint;
+}
+
+void Aeropuerto::mostrarDatos(){
+    std::cout << "Codigo IATA: " << codigo << std::endl;
+    std::cout << "Nombre: " << nombre << std::endl;
+    std::cout << "Ciudad: " << ciudad << std::endl;
+    std::cout << "Pais: " << pais << std::endl;
+    std::cout << "Superficie: " << superficie << std::endl;
+    std::cout << "Cantidad de terminales: " << terminales << std::endl;
+    std::cout << "Destinos nacionales: " << d_nac << std::endl;
+    std::cout << "Destinos internacionales: " << d_int << std::endl;
+}

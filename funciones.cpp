@@ -52,7 +52,6 @@ void opcion2(){
     std::cout << "Destinos internacionales: ";
     std::cin >> d_int;
     
-    std::cout << superficie + terminales << std::endl;
 }
 
 void opcion3(){
@@ -84,4 +83,33 @@ void mostrarDatos(std::ifstream &archivo){
     std::cout << "Cantidad de terminales: " << terminales << std::endl;
     std::cout << "Destinos nacionales: " << d_nac << std::endl;
     std::cout << "Destinos internacionales: " << d_int << std::endl;
+}
+
+Aeropuerto* crearAeropuerto(std::ifstream &archivo){
+    
+    std::string codigo = leerDato(archivo);
+    std::string nombre = leerDato(archivo);
+    std::string ciudad = leerDato(archivo);
+    std::string pais = leerDato(archivo);
+    float superficie = std::stod(leerDato(archivo));
+    int terminales = std::stod(leerDato(archivo));
+    int d_nac = std::stod(leerDato(archivo));
+    int d_int = std::stod(leerDato(archivo));
+    
+    Aeropuerto* a = new Aeropuerto(codigo, nombre, ciudad, pais, superficie, terminales, d_nac, d_int);
+    
+    return a;
+    
+}
+
+int longitudArchivo(std::ifstream &archivo){
+    std::string linea;
+    int longitud = 0;
+    while (!archivo.eof()) {
+        getline(archivo, linea);
+        longitud++;
+    }
+    archivo.clear();
+    archivo.seekg(0);
+    return longitud;
 }

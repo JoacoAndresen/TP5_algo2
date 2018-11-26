@@ -4,6 +4,7 @@
 #include <fstream>
 #include <stdio.h>
 #include <typeinfo>
+#include "aeropuerto.h"
 
 // Funciones auxiliares
 int menu();
@@ -13,5 +14,8 @@ void opcion3();
 void opcion4();
 std::string leerDato(std::ifstream &archivo);
 void mostrarDatos(std::ifstream &archivo);
+Aeropuerto* crearAeropuerto(std::ifstream &archivo);
+int longitudArchivo(std::ifstream &archivo);
+
 
 #endif /* funciones_h */
