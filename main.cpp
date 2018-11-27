@@ -1,4 +1,5 @@
 #include "funciones.h"
+#include "arbol.h"
 
 int main(){
     
@@ -7,14 +8,18 @@ int main(){
     
     int longitud = longitudArchivo(archivo) - 1;
     
-    for (int i = 0; i<longitud; i++) {
-        crearAeropuerto(archivo)->mostrarDatos();
-        std::cout << std::endl;
+    Aeropuerto* raiz = crearAeropuerto(archivo);
+    
+    BinarySearchTree<int>* arbol = new BinarySearchTree<int>(raiz->obtenerAscii(), raiz);
+    
+    for (int i = 1; i<longitud; i++) {
+        Aeropuerto* a = crearAeropuerto(archivo);
+        arbol->insert(a->obtenerAscii(), a);
     }
     
     archivo.close();
     
-    menu();
+    menu(arbol);
     
     return 0;
 }

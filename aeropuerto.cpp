@@ -9,6 +9,7 @@ Aeropuerto::Aeropuerto(std::string cod, std::string nom, std::string ciu, std::s
     terminales = ter;
     d_nac = dnac;
     d_int = dint;
+    ascii = (codigo[0]*codigo[0]*codigo[0]) + codigo[1] + codigo[2];
 }
 
 Aeropuerto::Aeropuerto(){
@@ -20,37 +21,42 @@ Aeropuerto::Aeropuerto(){
     terminales = 0;
     d_nac = 0;
     d_int = 0;
+    ascii = 0;
 }
 
-std::string Aeropuerto::mostrarCodigo(){
+std::string Aeropuerto::obtenerCodigo(){
     return codigo;
 }
 
-std::string Aeropuerto::mostrarNombre(){
+int Aeropuerto::obtenerAscii(){
+    return ascii;
+}
+
+std::string Aeropuerto::obtenerNombre(){
     return nombre;
 }
 
-std::string Aeropuerto::mostrarPais(){
+std::string Aeropuerto::obtenerPais(){
     return pais;
 }
 
-std::string Aeropuerto::mostrarCiudad(){
+std::string Aeropuerto::obtenerCiudad(){
     return ciudad;
 }
 
-float Aeropuerto::mostrarSuperficie(){
+float Aeropuerto::obtenerSuperficie(){
     return superficie;
 }
 
-int Aeropuerto::mostrarTerminales(){
+int Aeropuerto::obtenerTerminales(){
     return terminales;
 }
 
-int Aeropuerto::mostrarNacionales(){
+int Aeropuerto::obtenerNacionales(){
     return d_nac;
 }
 
-int Aeropuerto::mostrarInternacionales(){
+int Aeropuerto::obtenerInternacionales(){
     return d_int;
 }
 

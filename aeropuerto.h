@@ -13,6 +13,7 @@ private:
     int terminales;
     int d_nac;
     int d_int;
+    int ascii;
     
 public:
     //Constructores
@@ -20,14 +21,15 @@ public:
     Aeropuerto();
     
     //Metodos
-    std::string mostrarCodigo();
-    std::string mostrarNombre();
-    std::string mostrarCiudad();
-    std::string mostrarPais();
-    float mostrarSuperficie();
-    int mostrarTerminales();
-    int mostrarNacionales();
-    int mostrarInternacionales();
+    std::string obtenerCodigo();
+    std::string obtenerNombre();
+    std::string obtenerCiudad();
+    std::string obtenerPais();
+    float obtenerSuperficie();
+    int obtenerTerminales();
+    int obtenerNacionales();
+    int obtenerInternacionales();
+    int obtenerAscii();
     
     void modificarCodigo(std::string cod);
     void modificarNombre(std::string nom);

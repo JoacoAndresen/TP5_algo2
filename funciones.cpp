@@ -1,6 +1,6 @@
 #include "funciones.h"
 
-void menu(){
+void menu(BinarySearchTree<int>* arbol){
     
     int opcion;
     
@@ -13,19 +13,28 @@ void menu(){
     std::cin >> opcion;
     
     switch(opcion){
-        case 1: opcion1(); break;
-        case 2: opcion2(); break;
-        case 3: opcion3(); break;
-        case 4: opcion4(); break;
-        default: fueraDeRango(); break;
+        case 1: opcion1(arbol); break;
+        case 2: opcion2(arbol); break;
+        case 3: opcion3(arbol); break;
+        case 4: opcion4(arbol); break;
+        default: fueraDeRango(arbol); break;
     }
 }
 
-void opcion1(){
+void opcion1(BinarySearchTree<int>* arbol){
+    std::string codigo;
+    std::cout << "Introduzca el codigo IATA: ";
+    std::cin >> codigo;
+    
+    int ascii = calcularAscii(codigo);
+    
+    arbol->search(arbol->begin(),ascii)->getAep()->mostrarDatos();
+    
+    menu(arbol);
     
 }
 
-void opcion2(){
+void opcion2(BinarySearchTree<int>* arbol){
     std::string codigo;
     std::string nombre;
     std::string ciudad;
@@ -53,21 +62,34 @@ void opcion2(){
     std::cout << "Destinos internacionales: ";
     std::cin >> d_int;
     
-    Aeropuerto a(codigo, nombre, ciudad, pais, superficie, terminales, d_nac, d_int);
+    Aeropuerto* a = new Aeropuerto(codigo, nombre, ciudad, pais, superficie, terminales, d_nac, d_int);
     
+    arbol->insert(a->obtenerAscii(), a);
+    
+    menu(arbol);
 }
 
-void opcion3(){
+void opcion3(BinarySearchTree<int>* arbol){
+    std::string codigo;
+    std::cout << "Introduzca el codigo IATA del aeropuerto que desea eliminar: ";
+    std::cin >> codigo;
     
+    int ascii = calcularAscii(codigo);
+    
+    arbol->remove(arbol->begin(), ascii);
+    
+    menu(arbol);
 }
 
-void opcion4(){
+void opcion4(BinarySearchTree<int>* arbol){
     std::cout << std::endl << "SESION FINALIZADA" << std::endl;
+    
+    delete arbol;
 }
 
-void fueraDeRango(){
+void fueraDeRango(BinarySearchTree<int>* arbol){
     std::cout << std::endl << "ERROR! Ingrese una opcion valida." << std::endl;
-    menu();
+    menu(arbol);
 }
 
 std::string leerDato(std::ifstream &archivo){
@@ -124,4 +146,11 @@ int longitudArchivo(std::ifstream &archivo){
     archivo.clear();
     archivo.seekg(0);
     return longitud;
+}
+
+int calcularAscii(std::string codigo){
+    int entero = 0;
+    entero = (codigo[0]*codigo[0]*codigo[0]) + codigo[1] + codigo[2];
+    
+    return entero;
 }
