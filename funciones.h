@@ -4,10 +4,10 @@
 #include <fstream>
 #include <stdio.h>
 #include <typeinfo>
-#include "aeropuerto.cpp"
+#include "aeropuerto.h"
 
 // Funciones auxiliares
-int menu();
+void menu();
 void opcion1();
 void opcion2();
 void opcion3();

@@ -14,5 +14,7 @@ int main(){
     
     archivo.close();
     
+    menu();
+    
     return 0;
 }
