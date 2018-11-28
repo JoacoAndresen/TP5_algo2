@@ -38,10 +38,6 @@ void fueraDeRango(BinarySearchTree<int>* arbol);
 std::string leerDato(std::ifstream &archivo);
 
 // PRE: Recibe por referencia el archivo que se desea leer.
-// POST: Imprime por pantalla todos los campos que contiene el dato solicitado.
-void mostrarDatos(std::ifstream &archivo);
-
-// PRE: Recibe por referencia el archivo que se desea leer.
 // POST: Crea un nuevo aeropuerto con los campos leidos del dato.
 Aeropuerto* crearAeropuerto(std::ifstream &archivo);
 

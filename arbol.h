@@ -11,22 +11,47 @@ class BinarySearchTree {
 private:
     Node<T>* head;
 public:
+    //Constructor
+    // PRE: Datos validos.
+    // POST: Crea el arbol con los datos recibidos.
     BinarySearchTree(T data, Aeropuerto* pa);
+    
+    // PRE: -
+    // POST: Devuelve el nodo
     Node<T>* begin();
+    
+    // PRE: Datos validos
+    // POST: Inserta los datos en el arbol
     void insert(T data, Aeropuerto* pa);
+    
+    // PRE: Datos validos
+    // POST: Devuelve el nodo
     Node<T>* search(Node<T>* iterator, T data);
+    
+    // PRE: Datos validos
+    // POST: Elimina el nodo del arbol
     Node<T>* remove(Node<T> *iterator, T data);
+    
     void levelOrder();
+    
     void preOrder(Node<T> *iterator);
+    
     void inOrder(Node<T> *iterator);
+
     void postOrder(Node<T> *iterator);
+    
     Node<T>* findMax(Node<T> *iterator);
+    
     Node<T>* findMin(Node<T> *iterator);
+    
     int getHeight(Node<T> *head);
+    
     virtual ~BinarySearchTree();
 private:
     Node<T>* insert(Node<T> *head, T data, Aeropuerto* pa);
+    
     void destroy(Node<T>* node);
+    
     bool isEmpty(Node<T>*& head);
 };
 

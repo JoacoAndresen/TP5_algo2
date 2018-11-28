@@ -98,27 +98,6 @@ std::string leerDato(std::ifstream &archivo){
     return dato;
 }
 
-void mostrarDatos(std::ifstream &archivo){
-    
-    std::string codigo = leerDato(archivo);
-    std::string nombre = leerDato(archivo);
-    std::string ciudad = leerDato(archivo);
-    std::string pais = leerDato(archivo);
-    float superficie = std::stod(leerDato(archivo));
-    int terminales = std::stod(leerDato(archivo));
-    int d_nac = std::stod(leerDato(archivo));
-    int d_int = std::stod(leerDato(archivo));
-    
-    std::cout << "Codigo IATA: " << codigo << std::endl;
-    std::cout << "Aeropuerto: " << nombre << std::endl;
-    std::cout << "Ciudad: " << ciudad << std::endl;
-    std::cout << "Pais: " << pais << std::endl;
-    std::cout << "Superficie: " << superficie << std::endl;
-    std::cout << "Cantidad de terminales: " << terminales << std::endl;
-    std::cout << "Destinos nacionales: " << d_nac << std::endl;
-    std::cout << "Destinos internacionales: " << d_int << std::endl;
-}
-
 Aeropuerto* crearAeropuerto(std::ifstream &archivo){
     
     std::string codigo = leerDato(archivo);

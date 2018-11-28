@@ -11,14 +11,40 @@ private:
     Aeropuerto* p;
     
 public:
+    // Contructor
+    // PRE: Datos validos
+    // POST: Crea el nodo con los datos recibidos
     Node(T data, Aeropuerto* pa);
+    
+    // PRE: -
+    // POST: Devuelve data (el codigo ascii)
     T getData() const;
+    
+    // PRE: Datos validos
+    // POST: Modifica data
     void setData(T data);
+    
+    // PRE: -
+    // POST: Devuelve el hijo izquierdo si lo encuentra
     Node<T>*& getLeft();
+    
+    // PRE: Datos validos
+    // POST: Modifica el hijo izquierdo
     void setLeft(Node<T>* left);
+    
+    // PRE: -
+    // POST: Devuelve el hijo derecho si lo encuentra
     Node<T>*& getRight();
+    
+    // PRE: Datos validos
+    // POST: Modifica el hijo derecho
     void setRight(Node<T>* right);
+    
+    // Destructor
     virtual ~Node();
+    
+    // PRE: -
+    // POST: Devuelve el puntero al objeto
     Aeropuerto*& getAep();
 };
 
